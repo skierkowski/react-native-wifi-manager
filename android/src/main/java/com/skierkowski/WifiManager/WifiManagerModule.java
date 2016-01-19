@@ -41,7 +41,7 @@ public class WifiManagerModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void loadWifiList(Callback successCallback, Callback errorCallback) {
+  public void list(Callback successCallback, Callback errorCallback) {
     try {
       WifiManager mWifiManager = (WifiManager) getReactApplicationContext().getSystemService(Context.WIFI_SERVICE);
       List < ScanResult > results = mWifiManager.getScanResults();
@@ -58,7 +58,7 @@ public class WifiManagerModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void findAndConnect(String ssid, String password) {
+  public void connect(String ssid, String password) {
     WifiManager mWifiManager = (WifiManager) getReactApplicationContext().getSystemService(Context.WIFI_SERVICE);
     List < ScanResult > results = mWifiManager.getScanResults();
     for (ScanResult result: results) {
@@ -112,11 +112,11 @@ public class WifiManagerModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void connectionStatus(Callback connectionStatusResult) {
+  public void status(Callback statusResult) {
     ConnectivityManager connManager = (ConnectivityManager) getReactApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
     NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-    connectionStatusResult.invoke(mWifi.getState().toString());
+    statusResult.invoke(mWifi.getState().toString());
   }
 
   private static Integer findNetworkInExistingConfig(WifiManager wifiManager, String ssid) {
