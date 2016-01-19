@@ -8,11 +8,10 @@
     "url": "git+https://github.com/skierkowski/react-native-wifi-manager.git"
   },
   "keywords": [
-    "react",
-    "native",
-    "wifi",
+    "react-native",
+    "react-component",
     "android",
-    "react-native"
+    "wifi"
   ],
   "author": "Maciej Skierkowski",
   "license": "MIT",
