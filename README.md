@@ -1,8 +1,7 @@
-## react-native-wifi-manager
-
+## WiFi Manager for React Native (react-native-wifi-manager)
 [![npm version](https://badge.fury.io/js/react-native-wifi-manager.png)](http://badge.fury.io/js/react-native-wifi-manager)
 
-Device Information for react-native
+List, connect and get the status of the WiFi connection on the device.
 
 ## Installation
 
@@ -10,6 +9,16 @@ First you need to install react-native-wifi-manager:
 
 ```javascript
 npm install react-native-wifi-manager --save
+```
+
+* In `android/app/src/main/AndroidManifest.xml` add these permissions inside `<manifest/>`.
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
 
 * In `android/setting.gradle`
@@ -99,6 +108,7 @@ loadWifiListData: function() {
     WifiManager.list(
         (wifiArray) => {
             this.setState({
+                // wifiArray is an array of strings, each string being the SSID
                 dataSource: this.state.dataSource.cloneWithRows(wifiArray),
             });
         },
