@@ -12,7 +12,7 @@ import com.facebook.react.uimanager.ViewManager;
 import android.app.Activity;
 
 
-class WifiManager implements ReactPackage {
+public class WifiManager implements ReactPackage {
 
   @Override
   public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
