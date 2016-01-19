@@ -118,6 +118,8 @@ WifiManager.connect(ssid,password);
 ### Get status of connection (status)
 ```javascript
 checkConnectionStatus: function() {
+    // Possible States: 'CONNECTED', 'CONNECTING', 'DISCONNECTED', 'DISCONNECTING', 'SUSPENDED', 'UNKOWN'
+    // from: http://developer.android.com/reference/android/net/NetworkInfo.State.html
     WifiManager.status((status) => {
         if (status == 'CONNECTED') {
             this.navigateToActivation();
