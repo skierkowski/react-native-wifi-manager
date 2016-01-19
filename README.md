@@ -12,8 +12,6 @@ First you need to install react-native-wifi-manager:
 npm install react-native-wifi-manager --save
 ```
 
-### Installation (Android)
-
 * In `android/setting.gradle`
 
 ```gradle
@@ -88,8 +86,42 @@ public class MainActivity extends Activity implements DefaultHardwareBackBtnHand
 }
 ```
 
-
-## Release Notes
-
-
 ## Example
+
+### Load module
+```javascript
+var WifiManager = require('react-native-wifi-manager');
+```
+
+### List available networks (list)
+```javascript
+loadWifiListData: function() {
+    WifiManager.list(
+        (wifiArray) => {
+            this.setState({
+                dataSource: this.state.dataSource.cloneWithRows(wifiArray),
+            });
+        },
+        (msg) => {
+            console.log(msg);
+        },
+    );
+},
+```
+
+### Connect to a new network (status)
+```javascript
+// Attempts to connect to the network specified. This is an async call. Listen to connectionStatus for status
+WifiManager.connect(ssid,password);
+```
+
+### Get status of connection (status)
+```javascript
+checkConnectionStatus: function() {
+    WifiManager.status((status) => {
+        if (status == 'CONNECTED') {
+            this.navigateToActivation();
+        }
+    });
+},
+  ```
