@@ -109,7 +109,7 @@ loadWifiListData: function() {
 },
 ```
 
-### Connect to a new network (status)
+### Connect to a new network (connect)
 ```javascript
 // Attempts to connect to the network specified. This is an async call. Listen to connectionStatus for status
 WifiManager.connect(ssid,password);
