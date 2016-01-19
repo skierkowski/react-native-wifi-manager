@@ -1,6 +1,6 @@
 ## react-native-wifi-manager
 
-[![npm version](https://badge.fury.io/js/react-native-wifi-manager@2x.png)](http://badge.fury.io/js/react-native-wifi-manager)
+[![npm version](https://badge.fury.io/js/react-native-wifi-manager.png)](http://badge.fury.io/js/react-native-wifi-manager)
 
 Device Information for react-native
 
