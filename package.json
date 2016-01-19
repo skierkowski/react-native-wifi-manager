@@ -1,0 +1,23 @@
+{
+  "name": "react-native-wifi-manager",
+  "version": "0.1.0",
+  "description": "Wifi Connection Manager for React Native on Android",
+  "main": "wifimanager.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skierkowski/react-native-wifi-manager.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "wifi",
+    "android",
+    "react-native"
+  ],
+  "author": "Maciej Skierkowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skierkowski/react-native-wifi-manager/issues"
+  },
+  "homepage": "https://github.com/skierkowski/react-native-wifi-manager#readme"
+}
